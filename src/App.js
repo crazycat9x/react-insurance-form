@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-
 const icon = {
 	noPartner: (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			x="0px"
 			y="0px"
-			viewBox="0 0 408 408"
-		>
+			viewBox="0 0 408 408">
 			<g>
 				<g id="person">
 					<path
@@ -24,8 +22,7 @@ const icon = {
 			xmlns="http://www.w3.org/2000/svg"
 			x="0px"
 			y="0px"
-			viewBox="0 0 561 561"
-		>
+			viewBox="0 0 561 561">
 			<g>
 				<g id="people">
 					<path
@@ -43,8 +40,7 @@ const icon = {
 			xmlns="http://www.w3.org/2000/svg"
 			x="0px"
 			y="0px"
-			viewBox="0 0 426.667 426.667"
-		>
+			viewBox="0 0 426.667 426.667">
 			<g>
 				<path
 					d="M165.705,426.667C74.334,426.667,0,352.333,0,260.962c0-91.366,74.334-165.7,165.705-165.7
@@ -53,7 +49,6 @@ const icon = {
 		C269.436,203.767,222.899,157.235,165.705,157.235z"
 				/>
 				<polygon points="426.667,165.705 364.698,165.705 364.698,61.969 260.962,61.969 260.962,0 426.667,0 	" />
-
 				<rect
 					x="297.325"
 					y="3.092"
@@ -69,8 +64,7 @@ const icon = {
 			xmlns="http://www.w3.org/2000/svg"
 			x="0px"
 			y="0px"
-			viewBox="0 0 417.606 417.606"
-		>
+			viewBox="0 0 417.606 417.606">
 			<g>
 				<path
 					d="M251.906,331.41c-91.379,0-165.709-74.338-165.709-165.705c0-91.371,74.334-165.705,165.709-165.705
@@ -78,7 +72,6 @@ const icon = {
 		c-57.203,0-103.735,46.532-103.735,103.735c0,57.195,46.532,103.735,103.735,103.735c57.199,0,103.735-46.537,103.735-103.735
 		C355.637,108.507,309.105,61.975,251.906,61.975z"
 				/>
-
 				<rect
 					x="58.314"
 					y="233.078"
@@ -86,7 +79,6 @@ const icon = {
 					width="61.968"
 					height="190.518"
 				/>
-
 				<rect
 					x="-5.991"
 					y="297.329"
@@ -102,8 +94,7 @@ const icon = {
 			xmlns="http://www.w3.org/2000/svg"
 			x="0px"
 			y="0px"
-			viewBox="0 0 426.667 426.667"
-		>
+			viewBox="0 0 426.667 426.667">
 			<g>
 				<g>
 					<g>
@@ -130,8 +121,7 @@ const icon = {
 			xmlns="http://www.w3.org/2000/svg"
 			x="0px"
 			y="0px"
-			viewBox="0 0 448 448"
-		>
+			viewBox="0 0 448 448">
 			<g>
 				<g>
 					<g>
@@ -167,7 +157,6 @@ function validate(e) {
 		if (theEvent.preventDefault) theEvent.preventDefault();
 	}
 }
-
 function Tabs(props) {
 	return (
 		<ul className="tabs">
@@ -176,8 +165,7 @@ function Tabs(props) {
 					key={tab.toString()}
 					value={index}
 					className={index === props.activeTab ? "active" : ""}
-					onClick={(e, cond) => props.setValue(e, tab)}
-				>
+					onClick={(e, cond) => props.setValue(e, tab)}>
 					{tab[0]}
 				</li>
 			))}
@@ -220,7 +208,6 @@ function Slider(props) {
 		</div>
 	);
 }
-
 function RadioButton(props) {
 	return (
 		<fieldset className="radio-tile-group">
@@ -237,7 +224,6 @@ function RadioButton(props) {
 							checked={props.check === data[1]}
 							onChange={props.setValue}
 						/>
-
 						<div className="radio-tile">
 							<div className="icon">{icon[data[2]]}</div>
 							<label className="radio-tile-label">
@@ -412,7 +398,6 @@ class App extends React.Component {
 									<h1>Our offer</h1>
 								</div>
 							</div>
-
 							<h2
 								style={{
 									fontSize:
@@ -422,8 +407,7 @@ class App extends React.Component {
 											10 +
 										20
 								}}
-								className="currency"
-							>
+								className="currency">
 								{(
 									this.state.cover + this.state.partnerCover
 								).toLocaleString("en", {
@@ -451,5 +435,4 @@ class App extends React.Component {
 		);
 	}
 }
-
 export default App;
