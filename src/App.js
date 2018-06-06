@@ -236,7 +236,7 @@ function RadioButton(props) {
 		</fieldset>
 	);
 }
-class App extends React.Component {
+class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -249,7 +249,6 @@ class App extends React.Component {
 			partnerSmoke: "",
 			partnerAge: 0,
 			partnerSex: "",
-			partnerSmoke: "",
 			partnerCover: 0
 		};
 	}
@@ -257,10 +256,10 @@ class App extends React.Component {
 		const target = event.target;
 		var value = target.type === "checkbox" ? target.checked : target.value;
 		var name = target.name;
-		if (cond == "num") {
-			value = parseInt(value);
-		} else if (cond == "float") {
-			value = parseFloat(value);
+		if (cond === "num") {
+			value = parseInt(value, 10);
+		} else if (cond === "float") {
+			value = parseFloat(value, 10);
 		} else if (Array.isArray(cond)) {
 			name = "activeTab";
 			document.documentElement.style.setProperty("--main-color", cond[1]);
@@ -270,7 +269,7 @@ class App extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+		  <div>
 				<Tabs
 					tabs={[
 						["Insurance", "#2196F3"],
@@ -336,7 +335,7 @@ class App extends React.Component {
 						/>
 					</div>
 					<div className="col-12 col-sm-12 col-md-4 align-self-end">
-						{this.state.partner == "true" && (
+						{this.state.partner === "true" && (
 							<div>
 								<legend className="desc">
 									Your partner age
@@ -355,7 +354,7 @@ class App extends React.Component {
 								/>
 							</div>
 						)}
-						{this.state.partner == "true" && (
+						{this.state.partner === "true" && (
 							<RadioButton
 								desc="Is your partner a smoker?"
 								type="partnerSmoke"
@@ -367,7 +366,7 @@ class App extends React.Component {
 								setValue={this.handleValueChange.bind(this)}
 							/>
 						)}
-						{this.state.partner == "true" && (
+						{this.state.partner === "true" && (
 							<RadioButton
 								desc="Your partner gender"
 								type="partnerGender"
@@ -379,7 +378,7 @@ class App extends React.Component {
 								setValue={this.handleValueChange.bind(this)}
 							/>
 						)}
-						{this.state.partner == "true" && (
+						{this.state.partner === "true" && (
 							<Slider
 								desc="Your partner cover amount"
 								type="partnerCover"
