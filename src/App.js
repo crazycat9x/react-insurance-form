@@ -350,7 +350,7 @@ class App extends React.Component {
 						/>
 					</div>
 					<div className="col-12 col-sm-12 col-md-4 align-self-end">
-						{this.state.partner == "true" ? (
+						{this.state.partner == "true" && (
 							<div>
 								<legend className="desc">
 									Your partner age
@@ -368,10 +368,8 @@ class App extends React.Component {
 									}
 								/>
 							</div>
-						) : (
-							""
 						)}
-						{this.state.partner == "true" ? (
+						{this.state.partner == "true" && (
 							<RadioButton
 								desc="Is your partner a smoker?"
 								type="partnerSmoke"
@@ -382,10 +380,8 @@ class App extends React.Component {
 								]}
 								setValue={this.handleValueChange.bind(this)}
 							/>
-						) : (
-							""
 						)}
-						{this.state.partner == "true" ? (
+						{this.state.partner == "true" && (
 							<RadioButton
 								desc="Your partner gender"
 								type="partnerGender"
@@ -396,10 +392,8 @@ class App extends React.Component {
 								]}
 								setValue={this.handleValueChange.bind(this)}
 							/>
-						) : (
-							""
 						)}
-						{this.state.partner == "true" ? (
+						{this.state.partner == "true" && (
 							<Slider
 								desc="Your partner cover amount"
 								type="partnerCover"
@@ -409,8 +403,6 @@ class App extends React.Component {
 								value={this.state.partnerCover}
 								setValue={this.handleValueChange.bind(this)}
 							/>
-						) : (
-							""
 						)}
 					</div>
 					<div className="col-12 col-sm-12 col-md-4">
